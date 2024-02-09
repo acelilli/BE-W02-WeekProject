@@ -38,7 +38,6 @@ SELECT DISTINCT A.Cognome, A.Nome, A.Citta, V.DataViolazione, V.IndirizzoViolazi
 FROM ANAGRAFICA A
 INNER JOIN VERBALE V ON A.idAnagrafica = V.idAnagrafica
 WHERE (SELECT SUM(PuntiDecurtati) FROM VERBALE WHERE idAnagrafica = A.idAnagrafica) >= 5;
-
 -- nb. distinct funziona solo per la prima voce
 -------------------------------------------------
 --12. Cognome, Nome, Indirizzo, Data violazione, Importo e punti decurtati per tutte le violazioni che superino l’importo di 400 euro.
